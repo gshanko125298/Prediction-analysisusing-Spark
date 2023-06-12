@@ -1,0 +1,12 @@
+from pyspark.sql import SparkSession
+     
+
+spark = SparkSession.builder.appName("Tele_Spark").getOrCreate()
+     
+
+df = spark.read.csv("diabetes.csv", header=True, inferSchema=True)
+     
+
+df.show(2)
+     
+
